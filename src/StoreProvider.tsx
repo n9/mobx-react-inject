@@ -1,4 +1,5 @@
 import * as React from "react"
+import * as PropTypes from "prop-types"
 import {StoreContainerInstance, StoreProviderProps} from "../index"
 import {StoreContainer} from "./StoreContainer"
 
@@ -9,11 +10,11 @@ export class StoreProvider extends React.Component<StoreProviderProps, void> {
     }
 
     public static contextTypes = {
-        storeContainer: React.PropTypes.instanceOf(StoreContainer),
+        storeContainer: PropTypes.instanceOf(StoreContainer),
     }
 
     public static childContextTypes = {
-        storeContainer: React.PropTypes.instanceOf(StoreContainer).isRequired,
+        storeContainer: PropTypes.instanceOf(StoreContainer).isRequired,
     }
 
     private storeContainer: StoreContainerInstance

@@ -1,4 +1,5 @@
 import * as React from "react"
+import * as PropTypes from "prop-types"
 import {StoreContainer} from "./StoreContainer"
 import {ArgumentPositions, checkValidDependency, metadataKey, throwError} from "./utils"
 
@@ -16,7 +17,7 @@ function propertyDecorator(target: any, propertyName: string) {
     }
 
     if (targetConstructor.contextTypes.storeContainer == null) {
-        targetConstructor.contextTypes.storeContainer = React.PropTypes.instanceOf(StoreContainer).isRequired
+        targetConstructor.contextTypes.storeContainer = PropTypes.instanceOf(StoreContainer).isRequired
     }
 
     Object.defineProperty(target, propertyName, {
